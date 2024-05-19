@@ -18,6 +18,7 @@ let
           src = kernel;
           inherit version;
           modDirVersion = version;
+          kernelPatches = [ ];
         } // (if builtins.isNull argsOverride then { } else argsOverride);
       };
       new-fw = prev.raspberrypifw.overrideAttrs (oldfw: { src = fw; });
